@@ -1,5 +1,4 @@
 # Summary
 
 * [Introduction](README.md)
-    * [lixxx](./linux/README.md)
-
+  * [Linux](./linux/README.md)
