@@ -17,7 +17,7 @@ after_script:
   - npminstall codecov && codecov
 deploy:
   provider: pages
-  local-dir: ./dist/_book
+  local-dir: ./_book
   target-branch: gh-pages
   fqdn: wiki.tfcloud.top
   skip-cleanup: true
