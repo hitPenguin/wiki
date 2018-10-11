@@ -4,9 +4,9 @@ branches:
   - master
 language: node_js
 node_js:
-  - '8.11.3'
+  - '8.11.4'
 before_install:
-  - npm i -g npm@5.6.0
+  - npm i -g npm
 install:
   - npm i npminstall && npminstall
 before_script:
@@ -21,7 +21,7 @@ deploy:
   target-branch: gh-pages
   fqdn: wiki.tfcloud.top
   skip-cleanup: true
-  keep-history: true
+  keep-history: false
   github-token: $GITHUB_TOKEN
   on:
     branch: master

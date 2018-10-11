@@ -78,7 +78,6 @@ Blocks and filters have access to the same context, this context is bind to the 
 {
     // Current templating syntax
     "ctx": {
-        // For example, after a {% set message = "hello" %}
         "message": "hello"
     },
 
