@@ -1,25 +1,18 @@
 {
-  "name": "@ustack/wiki",
+  "name": "tfcloud-knowlege-base",
   "version": "0.0.1",
+  "private": true,
   "description": "tfcloud knowledge library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gitbook build"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tfcloud/wiki.git"
   },
-  "keywords": [
-    "['wiki'",
-    "'document'",
-    "'knowledge']"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tfcloud/wiki/issues"
+  "engines": {
+    "node": ">=10.10.0"
   },
-  "homepage": "https://github.com/tfcloud/wiki#readme"
+  "license": "MIT"
 }
