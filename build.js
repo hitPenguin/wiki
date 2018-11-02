@@ -25,8 +25,16 @@ const build = async function() {
     await execAsync(`gitbook build ${join(__dirname, book)} ${bookDir}`);
   }
 
+  console.log(books);
+  for (let book of books) {
+    try {
+      await buildBook(book);
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
-  await Promise.all(books.map(book => buildBook(book)));
+  // await Promise.all(books.map(book => buildBook(book)));
   // await Promise.all(books.map(book => {
   //   const bookDir = join(__dirname, book);
   // }));
@@ -34,8 +42,4 @@ const build = async function() {
   console.log(new Date() - start);
 }
 
-try {
-  build();
-} catch (e) {
-  console.log(e);
-}
+build();
