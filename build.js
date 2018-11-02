@@ -11,7 +11,7 @@ const build = async function() {
 
   let start = new Date();
   const books = (await fs.promises.readdir(__dirname, { withFileTypes: true }))
-    .filter(dirent => dirent.isDirectory() && /^[a-zA-Z0-9]/.test(dirent.name))
+    .filter(dirent => (dirent.isDirectory() && /^[a-zA-Z0-9]/.test(dirent.name) && dirent.name !== 'node_modules'))
     .map(dirent => dirent.name);
 
   const distDir = join(__dirname, '_dist');
