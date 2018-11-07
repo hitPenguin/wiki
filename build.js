@@ -6,12 +6,18 @@ const pkg = require('./package.json');
 
 const { join } = path;
 const execAsync = util.promisify(cp.exec);
-console.log(pkg);
+
+const ignoreDirs = [ 'node_modules' ];
 const build = async function() {
 
   let start = new Date();
   const books = (await fs.promises.readdir(__dirname, { withFileTypes: true }))
-    .filter(dirent => (dirent.isDirectory() && /^[a-zA-Z0-9]/.test(dirent.name) && dirent.name !== 'node_modules'))
+    .filter(dirent => {
+      if (!dirent.isDirectory()) return false;
+      if (!/^[a-zA-Z0-9]/.test(dirent.name)) return false;
+      if (ignoreDirs.indexOf(dirent.name) > -1) return false;
+      return true;
+    })
     .map(dirent => dirent.name);
 
   const distDir = join(__dirname, '_dist');
@@ -26,6 +32,11 @@ const build = async function() {
   }
 
   console.log(books);
+
+  const bookUrls = books.map(book => `<li><a href="/${book}">${book}</a></li>`);
+  const indexTemplate = await fs.promises.readFile(join(__dirname, 'index.html'), 'utf8');
+  await fs.promises.writeFile(join(distDir, 'index.html'), indexTemplate.replace('lilili', bookUrls.join('\n')));
+
   for (let book of books) {
     try {
       await buildBook(book);
