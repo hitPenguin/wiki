@@ -9,6 +9,6 @@ npm-debug.log*
 
 run
 .idea
-_*
-
+/_*
+_book
 dump.rdb
