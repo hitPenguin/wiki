@@ -1,4 +1,5 @@
 # 《得到·每天听本书》听书笔记
 
-* 《Just For Fun》是Linux之父Linus的自传
-* 赤裸裸的统计学
+这部分可能很多和编程无关，包罗万象，拓展知识面。
+
+[得到](https://www.igetget.com/)

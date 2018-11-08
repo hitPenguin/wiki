@@ -2,12 +2,6 @@
 
 Getting GitBook installed and ready-to-go should only take a few minutes.
 
-### legacy.gitbook.com
-
-[legacy.gitbook.com](https://legacy.gitbook.com) is an easy to use solution to write, publish and host books. It is the easiest solution for publishing your content and collaborating on it.
-
-It integrates well with the [GitBook Editor](https://legacy.gitbook.com/editor).
-
 ### Local Installation
 
 ##### Requirements
@@ -66,4 +60,3 @@ You can use the options `--log=debug` and `--debug` to get better error messages
 ```
 $ gitbook build ./ --log=debug --debug
 ```
-
